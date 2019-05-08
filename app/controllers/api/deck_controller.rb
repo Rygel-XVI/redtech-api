@@ -1,3 +1,5 @@
+require 'pry'
+
 class Api::DeckController < ApplicationController
 
   def index
