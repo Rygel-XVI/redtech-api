@@ -1,7 +1,8 @@
-class DeckController < ApplicationController
+class Api::DeckController < ApplicationController
 
   def index
-    render json: Deck.all
+    @decks = Deck.all ||= Deck.new
+    render json: @decks
   end
 
   def create
@@ -12,5 +13,5 @@ class DeckController < ApplicationController
 
   def destroy
   end
-  
+
 end
