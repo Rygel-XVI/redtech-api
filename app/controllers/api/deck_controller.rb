@@ -1,7 +1,7 @@
 class Api::DeckController < ApplicationController
 
   def index
-    @decks = Deck.all ||= Deck.new
+    @decks = Deck.all ||= []
     render json: @decks
   end
 
