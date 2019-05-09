@@ -14,6 +14,15 @@ class Api::DeckController < ApplicationController
   end
 
   def destroy
+    set_deck
+    @deck.destroy
+    render json: @deck
+  end
+
+  private
+
+  def set_deck
+    @deck = Deck.find(params[:id])
   end
 
 end

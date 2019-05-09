@@ -6,7 +6,8 @@ class Deck < ApplicationRecord
       numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13]
       suits.each do |s|
         numbers.each do |n|
-          self.cards << Card.create!(suit: s, number: n, location: 'deck', deck_id: self.id)
+          pic_location = Card.get_image(s, n)
+          self.cards << Card.create!(suit: s, number: n, location: 'deck', deck_id: self.id, image_location: pic_location)
         end
       end
       self
