@@ -4,8 +4,7 @@ class Card < ApplicationRecord
     validates :suit, :number, :location, presence: true
 
     def self.get_image(suit, number)
-      image = number.to_s + suit
-      '../images/JPEG/' + image + ".jpg"
+      number.to_s + suit
     end
 
 end
